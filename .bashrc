@@ -117,7 +117,6 @@ fi
 
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 source ~/.git_prompt.sh
-. ~/.git_completion.bash
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
