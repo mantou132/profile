@@ -1,0 +1,6 @@
+:map <C-S-D> <Up>
+:map j <Up>
+:map <C-d> <Down>
+:map k <Down>
+:map gb <C-6>
+:se editor='subl -n'

@@ -1,3 +1,9 @@
 [user]
-	email = 594mantou@gmail.com
+	email = xianqiao.wang@huaban.com
 	name = mantou
+[core]
+	editor = vim
+[alias]
+	logga = log --all --oneline --decorate --graph
+[push]
+	default = current

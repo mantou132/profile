@@ -112,4 +112,31 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-source ~/.nvm/nvm.sh
+
+. ~/.nvm/nvm.sh
+
+# git prompt
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+source ~/.git_prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWCOLORHINTS=true
+export GIT_PS1_SHOWUPSTREAM="git"
+export GIT_PS1_DESCRIBE_STYLE="branch"
+export GIT_PS1_STATESEPARATOR=" "
+
+# auto tmux open
+tmuxpath=$(which tmux)      # tmux path
+sessionname="mantou" # session name
+if [ -z $tmuxpath ]; then
+    echo "You need to install tmux."
+fi
+$tmuxpath has -t $sessionname 2> /dev/null #有没有这个会话，没有就会执行下面的if
+if [ $? != 0 ]; then
+	$tmuxpath new -d -s $sessionname
+    $tmuxpath splitw -h
+    $tmuxpath selectp -t 1
+fi
+
+$tmuxpath a -t $sessionname # 新开的面板这里会在执行一次，所以有嵌套提示

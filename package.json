@@ -1,0 +1,25 @@
+{
+  "name": "mantou",
+  "version": "1.0.0",
+  "description": "init",
+  "main": "tem.js",
+  "dependencies": {
+    "babel-core": "^6.3.21",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "react": "^0.14.3",
+    "jshint": "^2.8.0",
+    "csslint": "^0.10.0"
+  },
+  "devDependencies": {
+    "express": "^4.0.0"
+    },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tem"
+  ],
+  "author": "mt",
+  "license": "ISC"
+}
