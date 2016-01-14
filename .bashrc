@@ -133,10 +133,11 @@ if [ -z $tmuxpath ]; then
     echo "You need to install tmux."
 fi
 $tmuxpath has -t $sessionname 2> /dev/null #有没有这个会话，没有就会执行下面的if
-if [ $? != 0 ]; then
+if [ $? != 0 ] && [ "${TMUX_OPENED}" == "" ]; then
 	$tmuxpath new -d -s $sessionname
     $tmuxpath splitw -h
     $tmuxpath selectp -t 1
+    export TMUX_OPENED=1
 fi
 
 $tmuxpath a -t $sessionname # 新开的面板这里会在执行一次，所以有嵌套提示
