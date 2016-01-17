@@ -1,4 +1,7 @@
 > ReferenceError: fdsf is not defined
+sd
+sd
+/sd
     at repl:1:1
     at REPLServer.defaultEval (repl.js:132:27)
     at bound (domain.js:284:14)

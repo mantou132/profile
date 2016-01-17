@@ -113,6 +113,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#自动启动nvm
 . ~/.nvm/nvm.sh
 
 # git prompt
@@ -139,5 +140,9 @@ if [ $? != 0 ] && [ "${TMUX_OPENED}" == "" ]; then
     $tmuxpath selectp -t 1
     export TMUX_OPENED=1
 fi
-
 $tmuxpath a -t $sessionname # 新开的面板这里会在执行一次，所以有嵌套提示
+
+#alias
+alias o='xdg-open'
+alias gitst='git status | more'
+
